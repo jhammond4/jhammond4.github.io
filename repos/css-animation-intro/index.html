@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animation Playground</title>
+    <style>
+      /* Add your global styles here */
+      #element1:hover {
+        background-color: rgb(4, 189, 4);
+        color: white;
+        transform: rotate(360deg);
+      }
+
+      #element2:hover {
+        transform: scale(25);
+      }
+
+      #element3:active {
+        animation-name: jump;
+        animation-duration: .15s;
+        animation-fill-mode:both;
+        animation-iteration-count: infinite;
+      }
+
+      .animated-element-1 {
+        width: 100px;
+        height: 100px;
+        background-color: #8d34db;
+        margin: 20px;
+        display: inline-flex; /* Use flex to center text vertically */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        text-align: center; /* Center text horizontally */
+        transition: 1s ease-in;
+
+        /* You can add animation/transition code to all elements here */
+      }
+
+      .animated-element-3 {
+        width: 100px;
+        height: 100px;
+        background-color: #d43833;
+        color: #f0f0f0;
+        margin: 20px;
+        display: inline-flex; /* Use flex to center text vertically */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        text-align: center; /* Center text horizontally */
+        transition: .1s;
+
+        /* You can add animation/transition code to all elements here */
+      }
+
+      .dot {
+        height: 100px;
+        width: 100px;
+        background-color: #df5f14;
+        color: #000000;
+        border-radius: 50%;
+        display: inline-flex;
+        margin: 20px;
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        text-align: center; /* Center text horizontally */
+        transition: .5s ease-in;
+      }
+
+      body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      @keyframes jump {
+        from{ transform: translateY(0px)}
+        to {transform: translateY(-10px)}
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Animation Playground</h1>
+    <div class="animated-element-1" id="element1">w h o a</div>
+
+    <div class="dot" id="element2">RUN.</div>
+
+    <div class="animated-element-3" id="element3">Wa-hoo!</div>
+
+    <!-- You can add more elements here -->
+
+    
+    <script>
+      // JavaScript for adding interactivity (if needed)
+
+      // For example: if you want to add a class when an element gets clicked, use code similar to:
+      // const elementX = document.getElementById("elementX");
+      // elementX.addEventListener("click", () => {
+      // elementX.classList.toggle("clicked"); // Adds "clicked" class if it's not there, otherwise it removes it
+      // });
+    </script>
+  </body>
+</html>
