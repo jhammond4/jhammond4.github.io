@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Loading Animation</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* This centers vertically */
+        perspective: 1000px; /* Adjust the perspective depth */
+        background-color: rgb(68, 179, 216);
+      }
+      .dot {
+        height: 10px;
+        width: 10px;
+        background-color: #ffffff;
+        color: #ffffff;
+        border-radius: 50%;
+        display: inline-flex;
+        margin: 20px;
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        text-align: center; /* Center text horizontally */
+        animation: draw_shapes 12s ease-in-out 0s infinite;
+      }
+      /*I could get these nth childs to work but I'm leaving them in case the is a simple modification to get them to work*/
+      .dot:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+      .dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .dot:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      .dot:nth-child(4) {
+        animation-delay: 0.4s;
+      }
+      
+      .loading-text {
+        color: white;
+      }
+
+      .dot-container {
+        transform: translateX(-115px) translateY(120px);
+      }
+
+      #l {
+        animation: jumpl 4s ease-in-out 0s infinite;
+      }
+
+      #o {
+        animation: jumpo 4s ease-in-out 0s infinite;
+      }
+
+      #a {
+        animation: jumpa 4s ease-in-out 0s infinite;
+      }
+
+      #d {
+        animation: jumpd 4s ease-in-out 0s infinite;
+      }
+
+      #i {
+        animation: jumpi 4s ease-in-out 0s infinite;
+      }
+
+      #n {
+        animation: jumpn 4s ease-in-out 0s infinite;
+      }
+
+      #g {
+        animation: jumpg 4s ease-in-out 0s infinite;
+      }
+
+      #period1 {
+        animation: jump_period1 4s ease-in-out 0s infinite;
+      }
+
+      #period2 {
+        animation: jump_period2 4s ease-in-out 0s infinite;
+      }
+
+      #period3 {
+        animation: jump_period3 4s ease-in-out 0s infinite;
+      }
+
+      /*this is leftover from a function where the dot wouldn't rotate to create a circle, at some point I thought about making a dot to blend in with the background but couldn't get it to work*/
+      @keyframes rotate {
+        0% {
+            background-color: rgb(68, 179, 216);
+        }
+        9% {
+            background-color: rgb(68, 179, 216);
+        }
+        10% {
+            background-color: green;
+            transform: rotate(0deg) translateY(100px);
+        }
+        30% {
+            background-color: green;
+            transform: rotate(360deg) translateY(100px);
+        }
+        31% {
+            background-color: rgb(68, 179, 216);
+        }
+        100% {
+            background-color: rgb(68, 179, 216);
+        }
+      }
+
+      /*the colors here are leftover from an unused idea but I didn't want to delete them in case I make corrections*/
+      @keyframes jumpl {
+        8.33% {
+            transform: translateY(0px);
+            color: white;
+        }
+        12.5% {
+            transform: translateY(-10px);
+            color: white;
+        }
+        16.1667% {
+            transform: translateY(0px);
+            color: white;
+        }
+      }
+
+      @keyframes jumpo {
+        16.1667% {
+            transform: translateY(0px);
+            color: white;
+        }
+        20.833% {
+            transform: translateY(-10px);
+            color: white;
+        }
+        25% {
+            transform: translateY(0px);
+            color: white;
+        }
+      }
+
+      @keyframes jumpa {
+        25% {
+            transform: translateY(0px);
+            color: white;
+        }
+        29.1667% {
+            transform: translateY(-10px);
+            color: white;
+        }
+        33.333% {
+            transform: translateY(0px);
+            color: white;
+        }
+      }
+
+      @keyframes jumpd {
+        33.3333% {
+            transform: translateY(0px);
+            color: white;
+        }
+        37.5% {
+            transform: translateY(-10px);
+            color: white;
+        }
+        41.667% {
+            transform: translateY(0px);
+            color: white;
+        }
+      }
+
+      @keyframes jumpi {
+        41.667% {
+            transform: translateY(0px);
+            color: white;
+        }
+        45.8333% {
+            transform: translateY(-10px);
+            color: white;
+        }
+        50% {
+            transform: translateY(0px);
+            color: white;
+        }
+      }
+
+      @keyframes jumpn {
+        50% {
+            transform: translateY(0px);
+            color: white;
+        }
+        54.1667% {
+            transform: translateY(-10px);
+            color: white;
+        }
+        58.3333% {
+            transform: translateY(0px);
+            color: white;
+        }
+      }
+
+      @keyframes jumpg {
+        58.3333% {
+            transform: translateY(0px);
+            color: white;
+        }
+        62.5% {
+            transform: translateY(-10px);
+            color: white;
+        }
+        66.667% {
+            transform: translateY(0px);
+            color: white;
+        }
+      }
+
+      @keyframes jump_period1 {
+        66.667% {
+            transform: translateY(0px);
+            color: white;
+        }
+        70.833% {
+            transform: translateY(-10px);
+            color: white;
+        }
+        75% {
+            transform: translateY(0px);
+            color: white;
+        }
+      }
+
+      @keyframes jump_period2 {
+        75% {
+            transform: translateY(0px);
+            color: white;
+        }
+        79.1667% {
+            transform: translateY(-10px);
+            color: white;
+          }
+        83.833% {
+            transform: translateY(0px);
+            color: white;
+        }
+      }
+
+      @keyframes jump_period3 {
+        83.833% {
+            transform: translateY(0px);
+            color: white;
+        }
+        87.5% {
+            transform: translateY(-10px);
+            color: white;
+        }
+        91.667% {
+            transform: translateY(0px);
+            color: white;
+        }
+      }
+
+      @keyframes draw_shapes {
+        0% {
+            background-color: white;
+            transform: translateX(0px);
+        }
+        9% {
+            background-color: white;
+        }
+        10% {
+            background-color: green;
+            transform: translateX(0px)
+        }
+        15% {
+            transform: translateX(120px) translateY(-120px);
+        }
+        20% {
+            transform: translateX(0px) translateY(-240px);
+        }
+        25% {
+            transform: translateX(-120px) translateY(-120px);
+        }
+        30% {
+            background-color: green;
+            transform: translateX(0px);
+        }
+        31% {
+            background-color: white;
+        }
+        39% {
+            background-color: white;
+        }
+        40% {
+            background-color: red;
+            transform: translateX(0px);
+        }
+        46.6% {
+            transform: translateX(180px) translateY(-170px);
+        }
+        53.3% {
+            transform: translateX(-180px) translateY(-170px);
+        }
+        60% {
+            background-color: red;
+            transform: translateX(0px) translateY(0px);
+        }
+        61% {
+            background-color: white;
+        }
+        69% {
+            background-color: white;
+        }
+        70% {
+            background-color: blue;
+            transform: translateX(0px);
+        }
+        72.5% {
+            transform: translateX(120px);
+        }
+        77.5% {
+            transform: translateX(120px) translateY(-240px);
+        }
+        82.5% {
+            transform: translateX(-120px) translateY(-240px);
+        }
+        87.5% {
+            transform: translateX(-120px);
+        }
+        90% {
+            background-color: blue;
+            transform: translateX(0px);
+        }
+        91% {
+            background-color: white;
+        }
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1 class="loading-text" id="l">L</h1>
+        <h1 class="loading-text" id="o">O</h1>
+        <h1 class="loading-text" id="a">A</h1>
+        <h1 class="loading-text" id="d">D</h1>
+        <h1 class="loading-text" id="i">I</h1>
+        <h1 class="loading-text" id="n">N</h1>
+        <h1 class="loading-text" id="g">G</h1>
+        <h1 class="loading-text" id="period1">.</h1>
+        <h1 class="loading-text" id="period2">.</h1>
+        <h1 class="loading-text" id="period3">.</h1>
+        <div class="dot-container">
+            <div class="dot"></div>
+            <!--these dots were going to follow the first but I couldn't get them to stack on top of one another-->
+            <!--<div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>-->
+        </div>
+    </div>
+  </body>
+</html>
