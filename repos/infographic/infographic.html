@@ -122,68 +122,120 @@
                 transition: all 2s linear;
             }
 
-            #bar-03 {
+            .bar-03 {
                 transform: scaleX(0);
                 transform-origin: left;
                 transform-box: fill-box;
                 transition: transform 1s linear
             }
 
-            #shadow-03 {
+            .shadow-03 {
                 opacity: 0;
             }
 
-            #arrows-03 {
+            .arrows-03 {
+                transform: translateX(-20px);
+                transition: all 1s linear
+            }
+
+            .animate-bar {
+                transform: scaleX(1);
+            }
+
+            .animate-shadow {
+                opacity: 1;
+                transition: all 1s linear
+            }
+
+            .animate-arrows {
+                transition: all 1s linear;
+                animation-delay: 3s;
+            }
+
+            #bar-04 {
+                transform: scaleX(0);
+                transform-origin: left;
+                transform-box: fill-box;
+            }
+
+            #shadow-04 {
+                opacity: 0;
+            }
+
+            #arrows-04 {
                 transform-origin: -40px;
                 opacity: 0;
             }
 
-            #data-03:target > #bar-03 {
-                transform: scaleX(1);
+            #data-04 > #text-04 {
+                opacity: 0;
             }
 
-            #data-03 > #text-03 {
+            #data-04.active > #bar-04 {
+                transform: scaleX(1)
+            }
+
+            #data-04.active > #arrows-04 {
+                opacity: 1;
+            }
+
+            #data-04.active > #shadow-04 {
+                opacity: 1;
+            }
+
+            #data-04.active > #text-04 {
+                opacity: 1;
+            }
+
+            #detector {
+                transform: translateY(-150px);
+            }
+
+            #bar-05 {
+                opacity: 0;
+            }
+
+            #shadow-05 {
+                opacity: 0;
+            }
+
+            #arrows-05 {
+                transform-origin: -40px;
+                opacity: 0;
+            }
+
+            #data-05:hover > #bar-05 {
+                opacity: 1;
+                transition: all 3s linear;
+            }
+
+            #data-05 > #text-05 {
                 display: none;
             }
 
-            #data-03:target > #text-03 {
+            #data-05:hover > #text-05 {
                 display: initial;
             }
 
-            #data-03:target > #shadow-03 {
+            #data-05:hover > #shadow-05 {
+                opacity: 1;
+                transition: all 3s linear;
+            }
+
+            #data-05:hover > #arrows-05 {
+                transform: translateX(0px);
                 opacity: 1;
                 transition: all 1s linear;
             }
-
-            #data-03:target > #arrows-03 {
-                transform: translateX(0px);
-                opacity: 1;
-                transition: all 2s linear;
-            }
-
+            
         </style>
     </head>
     
     <body>
         <?xml version="1.0" encoding="UTF-8"?>
+        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.73932 506.4458">
-            <script>
-                // Get references to the button and parent element to animate
-                const button = document.querySelector('#data-03');  //needs icon name (this might be wrong here), maybe try with class if it doesn't work
-                const elementToAnimate = document.querySelector('#data-03');    //do one of these for the bar, text and arrows (make sure to include them below)
-
-                // Event listener for the menu toggle button
-                button.addEventListener('click', () => {
-                    const isActive = elementToAnimate.classList.contains("active")
             
-                    if (!isActive) { 
-                        // Add a class that tells CSS that the element is active
-                        elementToAnimate.classList.add("active")
-                    } else {
-                        elementToAnimate.classList.remove("active")
-                    }
-                });
-            </script>
         <g id="background">
                 <g>
                 <g>
@@ -538,7 +590,7 @@
             </g>
             <a href="data-03">
                 <g id="data-03">
-                    <path id="bar-03" class="cls-7" d="m292.57812,282.5493c0-12.8692-10.4326-23.3018-23.3007-23.3018H43.9365c-12.8681,0-23.3017,10.4326-23.3017,23.3018h0c0,12.8691,10.4336,23.3017,23.3017,23.3017h225.34092c12.8681,0,23.3007-10.4326,23.3007-23.3017h0Z"/>
+                    <path class="bar-03 cls-7" d="m292.57812,282.5493c0-12.8692-10.4326-23.3018-23.3007-23.3018H43.9365c-12.8681,0-23.3017,10.4326-23.3017,23.3018h0c0,12.8691,10.4336,23.3017,23.3017,23.3017h225.34092c12.8681,0,23.3007-10.4326,23.3007-23.3017h0Z"/>
                     <g id="text-03">
                     <g>
                         <path class="cls-3" d="m77.61624,276.46825v-6.3125h1.40918v5.05762h2.69141v1.25488h-4.10059Z"/>
@@ -679,11 +731,11 @@
                         <path class="cls-3" d="m116.54983,289.95263v.9043h-.35254v-1.6709h.35254v.30469c.0498-.10254.12598-.18359.22754-.24219s.21094-.08789.32812-.08789c.26367,0,.44238.10938.53711.32715.16504-.21777.37109-.32715.61816-.32715.18848,0,.34082.05762.45703.17285s.1748.28223.1748.5v1.02344h-.35156v-.91699c0-.30762-.12793-.46191-.38379-.46191-.11914,0-.22363.03809-.3125.11523-.08887.07617-.13574.1875-.13965.33398v.92969h-.35156v-.91699c0-.15918-.02832-.27637-.08496-.35059s-.14551-.11133-.2666-.11133c-.12207,0-.22754.04004-.31738.12109s-.13477.19824-.13477.35352Z"/>
                     </g>
                     </g>
-                    <g id="arrows-03">
+                    <g id="arrows-03" class="arrows-03">
                     <path class="cls-4" d="m243.46192,305.851l19.3477-19.3476c1.0498-1.0498,1.6386-2.4736,1.6386-3.9551,0-1.4814-.5888-2.9053-1.6386-3.9541l-19.3457-19.3467h18.1738l17.6035,17.6026c1.5098,1.5117,2.3594,3.5605,2.3594,5.6982s-.8496,4.1865-2.3594,5.7002l-17.6045,17.6025h-18.1748Z"/>
                     <path class="cls-5" d="m211.77442,259.2475h18.1738l17.6026,17.6026c1.5117,1.5117,2.3603,3.5605,2.3603,5.6982s-.8486,4.1865-2.3603,5.7002l-17.6035,17.6025h-18.1748l19.3476-19.3476c1.0498-1.0498,1.6387-2.4736,1.6387-3.9551,0-1.4814-.5889-2.9053-1.6387-3.9541l-19.3457-19.3467Z"/>
                     </g>
-                    <g id="shadow-03">
+                    <g id="shadow-03" class="shadow-03">
                     <path class="cls-9" d="m67.8691,284.8266c0-18.3632-14.8876-33.2549-33.25578-33.2549-18.36522,0-33.2549,14.8917-33.2549,33.2549,0,18.3653,14.88968,33.2559,33.2549,33.2559,18.36818,0,33.25578-14.8906,33.25578-33.2559Z"/>
                     </g>
                     <g id="icon-03">
@@ -1012,6 +1064,50 @@
                 <polygon class="cls-11" points="35.25392 93.7622 33.1602 93.7622 33.1602 85.8862 28.97362 95.0737 31.0684 95.0737 31.0684 102.9477 35.25392 93.7622"/>
                 </g>
             </g>
+            
         </svg>
+        <div id="detector"></div>
+        <script>
+                const button = document.querySelector('#icon-03');
+                const bar = document.querySelector('.bar-03'); 
+                const shadow = document.querySelector('.shadow-03'); 
+                const arrows = document.querySelector('.arrows-03'); 
+
+                button.addEventListener('click', () => {
+                    const isActive = bar.classList.contains("animate-bar")
+            
+                    if (!isActive) { 
+                        bar.classList.add("animate-bar")
+                        shadow.classList.add("animate-shadow")
+                        arrows.classList.add("animate-arrows")
+                    } else {
+                        bar.classList.remove("animate-bar")
+                        shadow.classList.remove("animate-shadow")
+                        arrows.classList.remove("animate-arrows")
+                    }
+                });
+        
+                // Scroll triggered SVG
+
+                // Get the trigger element + the element to change
+                const trigger = document.querySelector('#detector')
+                const elementToChange = document.querySelector('#data-04')
+
+                // Create the observer
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        // If element is in view, add active
+                        if (entry.isIntersecting){
+                            elementToChange.classList.add("active")
+                        }
+                        else {
+                            // Otherwise, remove active
+                            elementToChange.classList.remove("active")
+
+                        }
+                    });
+                });
+                observer.observe(trigger); 
+            </script>
     </body>
 </html>
