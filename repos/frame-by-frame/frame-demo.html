@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frame By Frame Animation</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* This centers vertically */
+        perspective: 1000px; /* Adjust the perspective depth */
+      }
+      .animation {
+        background-image: url(walkcycle.jpg);
+        height: 353px;
+        width: 400px;
+        animation: frames;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(10);
+      }
+      .animation2 {
+        background-image: url(walkcycle.jpg);
+        height: 353px;
+        width: 400px;
+        animation: frames2;
+        animation-duration: .005s;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(10);
+      }
+      .animation3 {
+        background-image: url(walkcycle.jpg);
+        height: 353px;
+        width: 400px;
+        animation: frames;
+        animation-duration: .005s;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(10);
+      }
+      @keyframes frames {
+        from {
+            background-position: 0px;
+        }
+        to {
+            background-position: -4000px;
+        }
+      }
+      @keyframes frames2 {
+        from {
+            background-position: 0px;
+        }
+        to {
+            background-position: 4000px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Frame By Frame Animation</h1>
+    <div class="container">
+        <div class="animation3"></div>
+        <div class="animation"></div>
+        <div class="animation2"></div>
+    </div>
+  </body>
+</html>
